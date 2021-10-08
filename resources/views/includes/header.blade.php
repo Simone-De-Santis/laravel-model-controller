@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ url('/') }}">My Films</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -9,17 +9,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page"
-            href="{{ route('home') }}">Home</a>
+          {{-- se siamo nella rotta home inserisce la classe active --}}
+          <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }} "
+            aria-current="page" href="{{ route('home') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link
+            {{ request()->routeIs('movie') ? 'active' : '' }}"
+            href="{{ route('movie') }}">Movie</a>
         </li>
       </ul>
     </div>
