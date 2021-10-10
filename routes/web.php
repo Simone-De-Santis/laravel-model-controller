@@ -17,7 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/movie', function () {
-    $movies = [];
-    return view('pages/movies', compact('movies'));
-})->name('movies.index');
+Route::get('/movie', 'MovieController@index')->name('movies.index');
