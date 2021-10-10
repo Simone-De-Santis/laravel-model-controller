@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//# aggiunto controller con il comando php artisan make:controller HomeController
+//# spostata la logica della rotta nel file controller home controller in app http controllers
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/movie', function () {
-    return view('pages/movies');
-})->name('movie');
+    $movies = [];
+    return view('pages/movies', compact('movies'));
+})->name('movies.index');

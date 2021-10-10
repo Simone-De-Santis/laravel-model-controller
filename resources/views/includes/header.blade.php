@@ -15,8 +15,8 @@
         </li>
         <li class="nav-item">
           <a class="nav-link
-            {{ request()->routeIs('movie') ? 'active' : '' }}"
-            href="{{ route('movie') }}">Movie</a>
+            {{ request()->routeIs('movies') ? 'active' : '' }}"
+            href="{{ route('movies.index') }}">Movie</a>
         </li>
       </ul>
     </div>
